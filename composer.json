@@ -1,0 +1,15 @@
+{
+  "name": "flower7c3/behat-selenium-docker",
+  "description": "Behat testing on Selenium with Docker and Docksal support",
+  "require-dev": {
+    "roave/security-advisories": "dev-latest",
+    "behat/behat": "^3.8",
+    "behat/mink": "^1.8",
+    "behat/mink-extension": "^2.3",
+    "behat/mink-goutte-driver": "^1.2",
+    "behat/mink-selenium2-driver": "^1.4"
+  },
+  "require": {
+    "integratedexperts/behat-screenshot": "^0.7.3"
+  }
+}

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+### Preview tests via VNC
+
+echo "Opening VNC on ${SELENIUM_VNC_PORT:-5900} port..."
+open vnc://127.0.0.1:${SELENIUM_VNC_PORT:-5900}
+echo "Type 'secret' as password."

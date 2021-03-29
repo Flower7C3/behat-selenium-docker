@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+#: exec_target = cli
+
+## Execute behat tests on Selenium
+##
+## Read more on https://www.kaliop.pl/Blog/Artykuly/Testy-automatyczne-wprowadzenie-Behat-Selenium-Mink
+
+php vendor/bin/behat $@

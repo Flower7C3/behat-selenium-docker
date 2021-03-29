@@ -1,0 +1,18 @@
+default:
+  suites:
+    default:
+      contexts:
+        - IntegratedExperts\BehatScreenshotExtension\Context\ScreenshotContext
+        - FeatureContext
+  extensions:
+    Behat\MinkExtension:
+      default_session: selenium2
+      goutte: ~
+      selenium2:
+        wd_host: "http://selenium:4444/wd/hub"
+      browser_name: chrome
+      files_path: 'files'
+    IntegratedExperts\BehatScreenshotExtension:
+      dir: "%paths.base%/screenshots"
+      fail: true
+      purge: true
