@@ -22,3 +22,8 @@ In `.docksal/docksal-local.env` file define variables:
 - `SELENIUM_VNC_PORT`
 
 > When You made some changes please recreate Docker stack with `fin start` command.
+
+
+### Troubleshooting
+
+1. For *ERROR: for selenium  Cannot start service selenium: Ports are not available: listen tcp 0.0.0.0:5900: bind: address already in use* please define `SELENIUM_VNC_PORT` in `.docksal/docksal-local.yml` file.
