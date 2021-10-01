@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+#: exec_target = cli
+
+## Check settings
+
+declare -r COLOR_GREEN='\033[0;32m'
+declare -r COLOR_RED='\033[0;31m'
+declare -r COLOR_RED_BG='\033[0;41m'
+declare -r COLOR_OFF='\033[0m'
+
+printf "Configuration check "
+errors=()
+if [ -z ${SELENIUM_BROWSER_NAME+x} ] || [[ "" == "$SELENIUM_BROWSER_NAME" ]]; then
+    errors+=('$SELENIUM_BROWSER_NAME')
+fi
+if [[ ${#errors} -gt 0 ]]; then
+    printf "[${COLOR_RED}ERROR${COLOR_OFF}]\n"
+    function join_by() {
+        local _delimiter=$1
+        shift
+        printf "${COLOR_RED_BG}%s${COLOR_RED}" "$1"
+        shift
+        printf "$_delimiter ${COLOR_RED_BG}%s${COLOR_OFF}${COLOR_RED}" "${@}"
+    }
+    printf "${COLOR_RED}Please define "
+    join_by , "${errors[@]}"
+    printf " in ${COLOR_RED_BG}.docksal/docksal-local.env${COLOR_OFF}${COLOR_RED} file${COLOR_OFF}\n"
+    exit 1
+fi
+printf "[${COLOR_GREEN}OK${COLOR_OFF}]\n"
+exit 0

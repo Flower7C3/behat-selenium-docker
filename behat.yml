@@ -3,7 +3,7 @@ default:
     default:
       contexts:
         - IntegratedExperts\BehatScreenshotExtension\Context\ScreenshotContext
-        - FeatureContext
+        - DefaultContext
   extensions:
     Behat\MinkExtension:
       default_session: selenium2
@@ -13,6 +13,26 @@ default:
       browser_name: chrome
       files_path: 'files'
     IntegratedExperts\BehatScreenshotExtension:
-      dir: "%paths.base%/screenshots"
+      dir: "%paths.base%/screenshots/runtime"
       fail: true
       purge: true
+
+chrome:
+  extensions:
+    Behat\MinkExtension:
+      browser_name: chrome
+      selenium2:
+        browser: firefox
+        capabilities:
+          extra_capabilities:
+            acceptInsecureCerts: true
+
+firefox:
+  extensions:
+    Behat\MinkExtension:
+      browser_name: firefox
+      selenium2:
+        browser: firefox
+        capabilities:
+          extra_capabilities:
+            acceptInsecureCerts: true

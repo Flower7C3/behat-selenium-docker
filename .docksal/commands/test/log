@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+## Execute behat tests on Selenium and store response
+
+cd $PROJECT_ROOT
+
+datetime=$(date "+%Y%m%d-%H%M%S")
+fin test --no-colors $@ 2>&1 | tee result.txt
+mkdir -p screenshots/"$datetime"/
+mv screenshots/runtime/* screenshots/"$datetime"/
+mv result.txt screenshots/"$datetime"/

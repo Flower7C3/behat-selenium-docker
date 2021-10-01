@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+## Execute behat tests on Selenium by given tag
+
+cd $PROJECT_ROOT
+
+fin test --tags @$1

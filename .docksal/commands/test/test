@@ -6,4 +6,8 @@
 ##
 ## Read more on https://www.kaliop.pl/Blog/Artykuly/Testy-automatyczne-wprowadzenie-Behat-Selenium-Mink
 
-php vendor/bin/behat $@
+cd ${PROJECT_ROOT}
+bash .docksal/commands/check
+if [[ "$?" == "0" ]]; then
+    php vendor/bin/behat -p ${SELENIUM_BROWSER_NAME} $@
+fi

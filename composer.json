@@ -10,6 +10,14 @@
     "behat/mink-selenium2-driver": "^1.4"
   },
   "require": {
-    "integratedexperts/behat-screenshot": "^0.7.3"
+    "php": ">=7.4",
+    "integratedexperts/behat-screenshot": "^0.7.3",
+    "fzaninotto/faker": "^1.9",
+    "ext-sqlite3": "*"
+  },
+  "autoload": {
+    "classmap": [
+      "features"
+    ]
   }
 }
